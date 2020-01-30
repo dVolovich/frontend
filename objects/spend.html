@@ -1,0 +1,26 @@
+<div class="div_head" id="top_table_head">Ввод расходов</div>
+
+
+	<div class="spend" id="Targets">
+				<form id="spend-request">
+					<input type="hidden" name="action" value="spend">
+				    <p><select name="cat" class="form-control" id="select-form">
+					<option value="test">test</option>
+					</select></p>
+					<input name="number" type="number" class="form-control"></input>
+					
+					<!--ОТПРАВКА ФОРМЫ (НЕ РЕАЛИЗОВАНО)-->
+				  <button type="submit" class="btn btn-success" style="margin-top: 20px; width: 100%;">Отправить</button>
+				
+				 </form>
+			</div>
+			<script>
+			var arr = '';
+			var i = 0;
+			while(data_[i])
+			{
+				arr+='<option value="'+data_[i][0]+'">'+data_[i][1]+'</option>';
+				i++;
+			}
+			document.getElementById('select-form').innerHTML = arr;
+			</script>

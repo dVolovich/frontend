@@ -1,0 +1,25 @@
+<div class="div_head" id="top_table_head">Удаление</div>
+
+
+	<div class="Targets" id="Targets">
+				<form id="delete-request">
+					<input type="hidden" name="action" value="delete">
+				    <p><select name="cat" class="form-control" id="delete-form">
+					<option value="test">test</option>
+					</select></p>
+					
+					<!--ОТПРАВКА ФОРМЫ (НЕ РЕАЛИЗОВАНО)-->
+				  <button type="submit" class="btn btn-danger" style="margin-top: 20px; width: 100%;">Удалить</button>
+				
+				 </form>
+			</div>
+			<script>
+			var arr = '';
+			var i = 0;
+			while(data_[i])
+			{
+				arr+='<option value="'+data_[i][0]+'">'+data_[i][1]+'</option>';
+				i++;
+			}
+			document.getElementById('delete-form').innerHTML = arr;
+			</script>

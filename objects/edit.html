@@ -1,0 +1,42 @@
+<div class="comment">Пример получения 1 элемента (редактирование таблицы)</div>
+
+
+<!--
+			<div class="one-Target">
+				<form id="get-one-Target">
+					<label class="field">
+						<span class="field_label">id Цели</span>
+						<input class="field_control" name="TargetId" />
+					</label>
+
+					<button class="button" type="submit">Запросить</button>
+				</form>
+				<div class="one-Target_result" id="one-Target"></div>
+			</div>
+			
+-->
+
+<div class="Targets edit" id="Targets">
+	<form id="edit-request">
+		<input type="hidden" name="action" value="edit">
+		<table id="main_table">
+		</table>
+		<br>
+		
+		<!--ОТПРАВКА ФОРМЫ (НЕ РЕАЛИЗОВАНО)-->
+		<button type="button" class="btn btn-success" id="sub" style="width: 100%">Подтвердить</button>
+		<script>
+			var arr = '<tr><th>Цель</th>'; arr+='<th>Лимит</th></tr>'
+			var i = 0;
+			while(data_[i])
+			{
+				var name = 'test';
+				arr+= '<tr><td><input class="edit-input" name="id'+data_[i][0]+'-name" value="'+data_[i][1]+'"></input></td>';
+				arr+= '<td><input class="edit-input" name="id'+data_[i][0]+'-number" value="'+data_[i][2]+'"></input></td></tr>';
+				i++;
+			}
+			document.getElementById('main_table').innerHTML = arr;
+			<!--ПЕРЕДАЧА ДАННЫХ-->
+		</script>
+	</form>
+</div>
