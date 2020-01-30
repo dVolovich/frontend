@@ -96,7 +96,6 @@ deleteForm.addEventListener("submit", event => {
 const renderBook = Category => `
     <div class="Category">
         <div class="Category_name">${Category.name}</div>
-        <div class="Category_client">${Category.client}</div>
         <div class="Category_limit">${Category.limit}</div>
     </div>
 `;
@@ -119,6 +118,27 @@ const getAllcategories = function() {
 
 getAllcategories();
 
+const bindAddFormListener = () => {
+    const addBookForm = document.querySelector("#add-request");
+    addBookForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const data = getFieldData(event.target);
+        console.log("main", "data", data);
+
+        toggleClass(".add-request", "loading");
+
+        createRequest({ path:"api/v001/category?userid="+userId, method: "POST" }, {}, data)
+            .then(response => {
+                toggleClass(".add-request", "loading");
+                console.log("Категория добавлена", response);
+            })
+            .catch(() => {
+                toggleClass(".add-request", "loading");
+                console.log("Не удалось добавить");
+            });
+    });
+}
 
 
 /*

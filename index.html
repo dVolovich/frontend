@@ -92,7 +92,8 @@
 						url: "objects/add.html",  
 						cache: false,  
 						success: function(html){  
-							$("#aaaa").html(html);  
+							$("#aaaa").html(html);
+							bindAddFormListener();
 						}  
 					});  
 					history.pushState(null, null, $urururl);

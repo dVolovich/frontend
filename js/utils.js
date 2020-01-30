@@ -39,14 +39,14 @@ const compileUrl = (url, params) => {
 };
 
 /**
- * @param  {string} options  [description]
- * @param  {Object} queryOptions [description]
+ * @param  {{path: string, method: string}} options  [description]
+ * @param  {String} queryOptions [description]
  * @param  {Object|undefined} body         [description]
  * @return {Promise}              [description]
  */
 const createRequest = (options, queryOptions, body) => {
   const requestUrl = compileUrl(options.path, queryOptions);
-
+console.log(options)
   return fetch(requestUrl, {
     headers: new Headers({
       Accept: "application/json",
