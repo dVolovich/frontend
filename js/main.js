@@ -94,10 +94,10 @@ deleteForm.addEventListener("submit", event => {
 */
 
 const renderBook = Category => `
-    <div class="Category">
-        <div class="Category_name">${Category.name}</div>
-        <div class="Category_limit">${Category.limit}</div>
-    </div>
+    <tr class="Category">
+        <td class="Category_name">${Category.name}</td>
+        <td class="Category_limit">${Category.limit}</td>
+    </tr>
 `;
 
 
