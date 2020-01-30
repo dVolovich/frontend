@@ -138,6 +138,16 @@ const bindAddFormListener = () => {
                 console.log("Не удалось добавить");
             });
     });
+
+    const addExpenses = document.querySelectorAll('.add-expenses')[0];
+    const addExpense = () => {
+        console.log(document.querySelectorAll('.fields')[0])
+        const filed = document.createElement('input');
+        filed.className = 'field_control';
+        filed.name = 'expenses';
+        document.querySelectorAll('.fields')[0].append(filed)
+    };
+    addExpenses.addEventListener('click', addExpense);
 }
 
 

@@ -107,7 +107,17 @@ const getFieldData = formElement => {
   const result = {};
 
   elements.forEach(element => {
-    result[element.name] = getFieldValue(element);
+    console.log(element)
+    if(result[element.name]) {
+      console.log(result[element.name], typeof result[element.name])
+      if(typeof result[element.name] === 'object') {
+        result[element.name].push(getFieldValue(element))
+      } else {
+        result[element.name] = [result[element.name], getFieldValue(element)]
+      }
+    } else {
+      result[element.name] = getFieldValue(element);
+    }
   });
 
   return result;
